@@ -141,7 +141,7 @@ def test_delete_attributes(
     )
     content = get_graphql_content(response)
 
-    assert content["data"]["attributeBulkDelete"]["count"] == 2
+    assert content["data"]["attributeBulkDelete"]["count"] == 3
     assert not Attribute.objects.filter(
         id__in=[attr.id for attr in attribute_list]
     ).exists()
